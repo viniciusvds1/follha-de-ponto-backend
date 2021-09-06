@@ -49,14 +49,10 @@ class InMemoryRepository implements UserRepository
         return $this->users[$id];
     }
    
-    public function findBy($field, $value)
+    public function findByEmail(string $email): User
     {
-        $prepared = $this->user->findOne($field, $value);
-
-        $prepared->bindValue(":{$field}", $value);
-
-        return $prepared;
         
+        return $this->users[$email];
 
     }
 }

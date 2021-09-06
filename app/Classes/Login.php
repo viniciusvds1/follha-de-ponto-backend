@@ -14,7 +14,7 @@ class Login
         $user = new InMemoryRepository;
         
        
-        $userFound = $user->findBy("email",$email);
+        $userFound = $user->findByEmail("email",$email);
         var_dump($userFound);
         die;
         if (!$userFound) {
